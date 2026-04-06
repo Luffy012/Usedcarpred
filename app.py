@@ -83,7 +83,7 @@ if st.sidebar.button("Predict Price", type="primary"):
         # Prepare categorical features
         categorical_data = pd.DataFrame([[transmission_simple, brand_category, fuel_type, accident, clean_title]],
                                         columns=prep_info['categorical_cols'])
-        categorical_encoded = encoder.transform(categorical_data).toarray()
+        categorical_encoded = encoder.transform(categorical_data)
         
         # Binary feature
         binary_data = np.array([[is_luxury_val]])
